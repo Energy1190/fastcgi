@@ -1,7 +1,7 @@
 FROM debian
 
 RUN apt-get update \
-	&& apt-get install -y fcgiwrap perl libfcgi-perl wget \
+	&& apt-get install -y --fix-missing fcgiwrap perl libfcgi-perl wget \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget http://nginxlibrary.com/downloads/perl-fcgi/fastcgi-wrapper -O /usr/bin/fastcgi-	wrapper.pl \
